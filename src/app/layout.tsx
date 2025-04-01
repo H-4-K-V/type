@@ -9,7 +9,7 @@ const font = Inter({
 
 export const metadata: Metadata = {
   title: 'Type.',
-  description: 'A text editor',
+  description: 'A text editor.',
 };
 
 export default function RootLayout({
@@ -19,7 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${font.variable} antialiased`}>{children}</body>
+      <body className={`${font.className} antialiased bg-slate-100`}>
+        {children}
+      </body>
     </html>
   );
 }
