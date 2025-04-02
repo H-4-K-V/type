@@ -1,6 +1,5 @@
 import React from 'react';
 import { ChevronDown, Heading1, Heading2, Heading3, Type } from 'lucide-react';
-import { Editor as EditorType } from '@tiptap/react';
 
 const options = [
   {

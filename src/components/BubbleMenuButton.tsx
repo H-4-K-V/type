@@ -4,8 +4,8 @@ import { HoverTitle } from './HoverTitle';
 interface BubbleMenuButtonProps {
   editor: EditorType;
   onClick: () => void;
-  type: String;
-  shortcutLetter: String;
+  type: string;
+  shortcutLetter: string;
   aditionalIcon?: React.ReactElement;
   icon: React.ReactElement;
 }
