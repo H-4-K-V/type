@@ -33,7 +33,7 @@ export default function Home() {
 
         <div className="flex flex-col justify-between mt-auto">
           <div className="flex justify-between">
-            <Image src={leaveImage} alt="Hand draw leave" />
+            <Image src={leaveImage} alt="Hand draw leave" unoptimized />
             <Link href="/editor" className="my-auto">
               <button className="flex items-center gap-2 cursor-pointer hover:scale-105 transition-all bg-zinc-800 p-3 rounded-sm text-slate-100 h-fit ">
                 Use Now <ArrowUpRight color="#f1f5f9" />
@@ -43,6 +43,7 @@ export default function Home() {
               src={leaveImage}
               alt="Hand draw leave"
               className="scale-x-[-1]"
+              unoptimized
             />
           </div>
         </div>
