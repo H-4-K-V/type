@@ -3,7 +3,7 @@ import React from 'react';
 import { Command } from 'lucide-react';
 
 interface props {
-  title: string;
+  title: String;
   aditionalIcon?: React.ReactElement;
 }
 
