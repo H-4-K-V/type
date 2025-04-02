@@ -23,7 +23,6 @@ export default function Home() {
         </a>
       </header>
 
-      {/* Section ocupa o espaço restante, mas mantém mt-36 */}
       <section className="relative flex flex-col mt-36 flex-grow">
         <h1 className="flex items-center justify-center text-5xl font-semibold text-zinc-800">
           Type.
