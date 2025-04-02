@@ -2,6 +2,7 @@ import { Github, Linkedin, ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
 import lineImage from '../assets/line.svg';
 import leaveImage from '../assets/leave.svg';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -33,9 +34,11 @@ export default function Home() {
         <div className="flex flex-col justify-between mt-auto">
           <div className="flex justify-between">
             <Image src={leaveImage} alt="Hand draw leave" />
-            <button className="flex items-center gap-2 cursor-pointer hover:scale-105 transition-all bg-zinc-800 p-3 rounded-sm text-slate-100 h-fit my-auto">
-              Use Now <ArrowUpRight color="#f1f5f9" />
-            </button>
+            <Link href="/editor" className="my-auto">
+              <button className="flex items-center gap-2 cursor-pointer hover:scale-105 transition-all bg-zinc-800 p-3 rounded-sm text-slate-100 h-fit ">
+                Use Now <ArrowUpRight color="#f1f5f9" />
+              </button>
+            </Link>
             <Image
               src={leaveImage}
               alt="Hand draw leave"
