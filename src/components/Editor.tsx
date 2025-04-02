@@ -3,7 +3,6 @@
 import React, { useRef } from 'react';
 
 import { useEditor, EditorContent, BubbleMenu } from '@tiptap/react';
-import { content } from '@/constants/content';
 
 import StarterKit from '@tiptap/starter-kit';
 import Placeholder from '@tiptap/extension-placeholder';
@@ -32,7 +31,6 @@ export function Editor() {
       },
     },
     immediatelyRender: false,
-    content: content,
   });
 
   const container = useRef<HTMLDivElement | null>(null);
