@@ -7,9 +7,10 @@ import StarterKit from '@tiptap/starter-kit';
 import Placeholder from '@tiptap/extension-placeholder';
 
 import { Bold, Italic, Strikethrough, ArrowBigUp } from 'lucide-react';
-
-import { HoverTitle } from './HoverTitle';
 import { BubbleMenuButton } from './BubbleMenuButton';
+import { DropDownMenu } from './DropDownMenu';
+
+type Level = 1 | 2 | 3 | 4 | 5 | 6;
 
 export function Editor() {
   const editor = useEditor({
@@ -33,7 +34,20 @@ export function Editor() {
     <div>
       {editor && (
         <BubbleMenu editor={editor} tippyOptions={{ duration: 100 }}>
-          <div className="bg-slate-100 shadow-sm flex gap-2 px-2 py-1 items-center rounded-2xl ">
+          <div className="bg-slate-100 shadow-sm flex gap-2 px-2 py-1 items-center rounded-md ">
+            <DropDownMenu
+              onChange={(value) => {
+                if (value === 0) {
+                  editor.chain().focus().setParagraph().run();
+                } else {
+                  editor
+                    .chain()
+                    .focus()
+                    .toggleHeading({ level: value as Level })
+                    .run();
+                }
+              }}
+            />
             <BubbleMenuButton
               editor={editor}
               onClick={() => editor.chain().focus().toggleBold().run()}
