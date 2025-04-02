@@ -1,5 +1,7 @@
 'use client';
 
+import React, { useRef } from 'react';
+
 import { useEditor, EditorContent, BubbleMenu } from '@tiptap/react';
 import { content } from '@/constants/content';
 
@@ -9,6 +11,9 @@ import Placeholder from '@tiptap/extension-placeholder';
 import { Bold, Italic, Strikethrough, ArrowBigUp } from 'lucide-react';
 import { BubbleMenuButton } from './BubbleMenuButton';
 import { DropDownMenu } from './DropDownMenu';
+
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 type Level = 1 | 2 | 3 | 4 | 5 | 6;
 
@@ -30,8 +35,18 @@ export function Editor() {
     content: content,
   });
 
+  const container = useRef<HTMLDivElement | null>(null);
+
+  useGSAP(() => {
+    gsap.fromTo(
+      container.current,
+      { x: 40, opacity: 0 },
+      { x: 0, opacity: 1, duration: 1, ease: 'power3.out' }
+    );
+  }, []);
+
   return (
-    <div>
+    <div className="editor" ref={container}>
       {editor && (
         <BubbleMenu editor={editor} tippyOptions={{ duration: 100 }}>
           <div className="bg-slate-100 shadow-sm flex gap-2 px-2 py-1 items-center rounded-md ">
