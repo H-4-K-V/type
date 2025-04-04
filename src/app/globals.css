@@ -1,14 +1,1 @@
-@import 'tailwindcss';
-@plugin "@tailwindcss/typography";
-
-/*TIP TAP*/
-@layer utilities {
-  .is-editor-empty:first-child::before {
-    content: attr(data-placeholder);
-    @apply float-left h-0 pointer-events-none text-slate-400;
-  }
-
-  .editor-button {
-    @apply hover:shadow-sm p-2 rounded-2xl transition relative;
-  }
-}
+@import "tailwindcss";
